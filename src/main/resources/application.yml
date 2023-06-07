@@ -1,0 +1,54 @@
+spring:
+  cache:
+
+    type: redis
+    redis:
+      time-to-live: 60000
+      cache-null-values: true
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/DbPostgres-CacheRedis
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+
+
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test?useSSL=false
+#    username: root
+#    password: admin@123
+#    hikari:
+#      initialization-fail-timeout: 0
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
+#    generate-ddl: true
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+
+
+#  jpa:
+#      properties:
+#        hibernate:
+#          dialect: org.hibernate.dialect.PostgreSQLDialect
+#      spring:
+#        jpa:
+#          hibernate:
+#            ddl-auto:update
+#            show-sql:true
+#        datasource:
+#          url: jdbc:postgresql://localhost:5432/cachedb
+#          username: postgres
+#          password: postgres
+#          initialize: true
+#        sql:
+#          init:
+#            mode: always
+#            continue-on-error: true
+##            schema-locations: classpath:/schema.sql
